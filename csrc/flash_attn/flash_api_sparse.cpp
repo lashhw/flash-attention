@@ -117,8 +117,7 @@ void set_params_fprop_sparse(Flash_fwd_params_sparse &params,
     params.column_count = column_count.const_data_ptr<int>();
     params.column_index = column_index.const_data_ptr<int>();
     TORCH_CHECK(block_count.size(2) == block_offset.size(2));
-    TORCH_CHECK(column_index.size(2) == block_offset.size(2));
-    TORCH_CHECK(column_count.size(2) == column_index.size(2));
+    TORCH_CHECK(column_count.size(2) == block_offset.size(2));
     params.NUM_ROWS = block_count.size(2);
     // params.NUM_ROWS should be equal to cdiv(seqlen_q, BLOCK_M), and BLOCK_M has to be 64 for now.
     constexpr int BLOCK_M = 64;
