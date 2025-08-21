@@ -60,7 +60,7 @@ struct Flash_fwd_kernel_traits : public Base {
     static constexpr bool Is_Q_in_regs = Is_Q_in_regs_ || Share_Q_K_smem;
 
     // The number of threads.
-    static constexpr int kNWarps = kNWarps_;
+    static constexpr int kNWarps = 4;
     static constexpr int kNThreads = kNWarps * 32;
 
     static constexpr int kBlockM = 64;
