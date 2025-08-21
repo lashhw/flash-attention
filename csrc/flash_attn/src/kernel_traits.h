@@ -63,8 +63,8 @@ struct Flash_fwd_kernel_traits : public Base {
     static constexpr int kNWarps = kNWarps_;
     static constexpr int kNThreads = kNWarps * 32;
 
-    static constexpr int kBlockM = kBlockM_;
-    static constexpr int kBlockN = kBlockN_;
+    static constexpr int kBlockM = 64;
+    static constexpr int kBlockN = 64;
     static constexpr int kHeadDim = kHeadDim_;
     static_assert(kHeadDim % 32 == 0);
     static constexpr int kBlockKSmem = kHeadDim % 64 == 0 ? 64 : 32;
